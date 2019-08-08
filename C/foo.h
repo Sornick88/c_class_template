@@ -13,12 +13,20 @@
 
 // clang-format on
 /*Exported types*/
+// clang-format off
+enum
+{
+	ERROR 	= (-1),
+	IDLE	= 0,
+	OK,	
+}
+// clang-format on
 typedef _tag_foo_str_type_t
 {
 	char * data;
 	uint32_t 	str_len
 }	foo_str_type_t;
-// clang-format off
+
 typedef void * (*foo_init_t)(void * p_context);
 typedef void (*foo_deinit_t)(void * p_context);
 
@@ -31,7 +39,7 @@ typedef uint32_t (*foo_read_str_t)(void const * p_context,
                 foo_str_type_t * p_str);
 typedef uint32_t (*foo_write_str_t)(void * p_context, 
                 foo_str_type_t const * p_str);
-// clang-format on
+
 typedef struct _tag_foo_m_list_t
 {
 	foo_init_t 	  		init;

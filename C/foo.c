@@ -69,73 +69,73 @@ static uint32_t deinit(void * p_context)
 {
   /*non foo class pointer*/
   if (((foo_data_t *)p_context)->p_m_list != &foo_m_list)
-    return -1;
+    return ERROR;
 
   free(p_context);
 
-  return 1;
+  return OK;
 }
 
 static uint32_t read_data(void const * p_context, 
                 uint32_t * p_data)
 {
   if (!p_context && !p_data)
-    return -1;
+    return ERROR;
   
   /*non foo class pointer*/
   if (((foo_data_t *)p_context)->p_m_list != &foo_m_list)
-    return -1;
+    return ERROR;
   
   *p_data = ((foo_data_t *)p_context)->data;
 
-  return 1;
+  return OK;
 }
 
 static uint32_t read_str(void const * p_context, 
                 foo_str_type_t * p_str)
 {
   if (!p_context && !p_data)
-    return -1;
+    return ERROR;
   
   /*non foo class pointer*/
   if (((foo_data_t *)p_context)->p_m_list != &foo_m_list)
-    return -1;
+    return ERROR;
 
   p_str->data = ((foo_data_t*)p_context)->str.data;
   p_str->str_len = ((foo_data_t*)p_context)->str.str_len;
 
-  return 1;
+  return OK;
 }
 
 static uint32_t write_data(void * p_context, 
                 uint32_t const * p_data)
 {
   if (!p_context && !p_data)
-    return -1;
+    return ERROR;
   
   /*non foo class pointer*/
   if (((foo_data_t *)p_context)->p_m_list != &foo_m_list)
-    return -1;
+    return ERROR;
 
   ((foo_data_t*)p_context)->data = *p_data;
 
-  return 1;
+  return OK;
 }
 
 static uint32_t write_str(void * p_context, 
                 foo_str_type_t * p_str)
 {
   if (!p_context && !p_data)
-    return -1;
+    return ERROR;
   
   /*non foo class pointer*/
   if (((foo_data_t *)p_context)->p_m_list != &foo_m_list)
-    return -1;
+    return ERROR;
 
   ((foo_data_t*)p_context)->str.data = p_str->data;
   ((foo_data_t*)p_context)->str.str_len = p_str->str_len;
 
-  return 1;
+  return OK;
 }
 /*Public functions*/
 
