@@ -26,7 +26,7 @@ typedef uint32_t (*foo_read_data_t)(void const * p_context,
                 uint32_t * p_data);
 typedef uint32_t (*foo_write_data_t)(void * p_context, 
                 uint32_t const * p_data);
-								
+
 typedef uint32_t (*foo_read_str_t)(void const * p_context, 
                 foo_str_type_t * p_str);
 typedef uint32_t (*foo_write_str_t)(void * p_context, 
