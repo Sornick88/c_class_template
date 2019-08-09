@@ -19,25 +19,25 @@ enum
 	ERROR 	= (-1),
 	IDLE	= 0,
 	OK,	
-}
+};
 // clang-format on
-typedef _tag_foo_str_type_t
+typedef struct tag_foo_str_type_t
 {
 	char * data;
-	uint32_t 	str_len
+	int 	str_len
 }	foo_str_type_t;
 
 typedef void * (*foo_init_t)(void * p_context);
 typedef void (*foo_deinit_t)(void * p_context);
 
-typedef uint32_t (*foo_read_data_t)(void const * p_context, 
-                uint32_t * p_data);
-typedef uint32_t (*foo_write_data_t)(void * p_context, 
-                uint32_t const * p_data);
+typedef int (*foo_read_data_t)(void const * p_context, 
+                int * p_data);
+typedef int (*foo_write_data_t)(void * p_context, 
+                int const * p_data);
 
-typedef uint32_t (*foo_read_str_t)(void const * p_context, 
+typedef int (*foo_read_str_t)(void const * p_context, 
                 foo_str_type_t * p_str);
-typedef uint32_t (*foo_write_str_t)(void * p_context, 
+typedef int (*foo_write_str_t)(void * p_context, 
                 foo_str_type_t const * p_str);
 
 typedef struct _tag_foo_m_list_t
