@@ -34,9 +34,9 @@ int user_main(void)
   p_foo = foo_m_list.init()
   if (p_foo != NULL)
   {
-    if (foo_m_list.write(p_foo, (char*)&var, sizeof(uint32_t)))
+    if (foo_m_list.write_data(p_foo, &var)
     {
-      foo_m_list.read(p_foo, (char*)&user_data.data, sizeof(uint32_t)));
+      foo_m_list.read_data(p_foo, &user_data.data);
       foo_m_list.deinit(p_foo);
     }
   }
